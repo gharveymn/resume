@@ -1,0 +1,251 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Plasmati Graduate CV
+% LaTeX Template
+% Version 1.0 (24/3/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Alessandro Plasmati (alessandro.plasmati@gmail.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important note:
+% This template needs to be compiled with XeLaTeX.
+% The main document font is called Fontin and can be downloaded for free
+% from here: http://www.exljbris.com/fontin.html
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[letter,10pt]{article} % Default font size and paper size
+\RequirePackage[left=1.4in,right=1.4in,top=1in,bottom=1in]{geometry}
+
+\usepackage{tabularx}
+
+\usepackage{listings}
+
+\usepackage{fontspec} % For loading fonts
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont{ER Univers 866} % Main document font
+
+\usepackage{xunicode,xltxtra,url,parskip} % Formatting packages
+
+\usepackage[usenames,dvipsnames]{xcolor} % Required for specifying custom colors
+
+\addtolength{\voffset}{-1.3cm}
+
+\usepackage{hyperref} % Required for adding links	and customizing them
+\definecolor{linkcolour}{rgb}{0,0.2,0.6} % Link color
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour} % Set link colors throughout the document
+
+\usepackage{titlesec} % Used to customize the \section command
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule] % Text formatting of sections
+\titlespacing{\section}{0pt}{3pt}{3pt} % Spacing around sections
+
+\begin{document}
+
+\pagestyle{empty} % Removes page numbering
+
+\font\fb=''[cmr10]'' % Change the font of the \LaTeX command under the skills section
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\par{\centering{\Huge Gene \textsc{Harvey}}\\\smallskip
+{\footnotesize\hspace{0.6cm}\href{mailto:gharveym@gmail.com}{gharveym@gmail.com} | 952-999-6539 | \href{https://github.com/gharveymn}{https://github.com/gharveymn}}\bigskip\par} % Your name
+
+\begin{center}{\small
+\begin{tabularx}{\textwidth}{cXc}
+\begin{tabular}{l}
+\textbf{Current Address} \\
+1228-30 Maclean Crescent \\
+Winnipeg, MB, R3T2N1 \\
+Canada \\
+\end{tabular} 
+&&
+\begin{tabular}{r}
+\textbf{Permanent Address} \\
+9880 Crestwood Terrace \\
+Eden Prairie, MN, 55347 \\
+United States
+\end{tabular}
+\end{tabularx}}
+\end{center}
+
+\section{Objective}
+Seeking a challenging position as a Software Engineering Intern utilizing exceptional software engineering skills in data analysis, quantitative data processing, and computational physics, augmented by mathematical training with specialization in linear algebra. I also seek the opportunity to learn to use these skills for effective utilization of machine learning. Also experienced in documented and undocumented MATLAB MEX API.
+
+\section{Technical Skills}
+\begin{tabular}{r|ll}
+Languages & \textbf{Proficient} & C, MATLAB, Python, Java, {\fb\LaTeX} \\[2pt]
+& \textbf{Has Experience} & Wolfram Language, Typescript, Javascript, \\
+&& PHP, Makefile, CMake, HTML, CSS, Markdown \\
+\multicolumn{3}{c}{} \vspace{-1ex}\\
+Tools & \textbf{Primary} & Git, CLion, Visual Studio, TeXstudio, VSCode, GDB, \\
+&& Valgrind, PyCharm, Intellij IDEA, Mathematica \\
+\multicolumn{3}{c}{} \vspace{-1ex}\\
+Environments & \textbf{Primary} & Windows 10 \\[2pt]
+& \textbf{Familiar} & Manjaro, Ubuntu, Linux Mint \\
+\end{tabular}
+
+%----------------------------------------------------------------------------------------
+%EDUCATION
+%----------------------------------------------------------------------------------------
+
+\section{Education}
+
+\begin{tabular}{rcrl}
+\textsc{Sep} 2015- && \textbf{Degree} & Bachelor of Science, University of Manitoba \\
+&& \textbf{Major} & Mathematics - Physics and Astronomy (Joint Honours) \\
+&& \textbf{Minor} & Computer Science \\
+&& \textbf{Graduation} & May 2019 (Expected) \\
+\end{tabular}
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE 
+%----------------------------------------------------------------------------------------
+
+\section{Work Experience}
+\begin{tabular}{r|p{9.5cm}}
+\textsc{Sep} 2017-\textsc{Dec} 2017 & \textbf{Student Research Assistant} (University of Manitoba) \\ 
+& \footnotesize{Developing multiprocess shared memory solutions for MATLAB. Created a fast partial loader for MATLAB MAT-files with implementation of multithreaded byte-level parsing of the HDF5 format (typically 3-6x faster than the native function).}\\
+\multicolumn{2}{c}{} \\
+
+%------------------------------------------------
+
+\textsc{May} 2017-\textsc{Aug} 2017 & \textbf{Consultant} (NQube)\\
+& \footnotesize{Worked on code optimization in automated trading models. Increased performance in computation by up to 90\% with vectorization in MATLAB. Other work involved evaluation of neural network based models. Also wrote a training manual for Git.}\\
+\multicolumn{2}{c}{} \\
+
+%------------------------------------------------
+
+\textsc{May} 2017-\textsc{Sep} 2017 & \textbf{Undergraduate Researcher} (University of Manitoba)\\
+& \footnotesize{Developed finite difference solvers for the Navier-Stokes equations in time dependent and independent forms with MATLAB. Began analysis on flow in a symmetric channel with special attention to eddy bifurcation.}\\
+\multicolumn{2}{c}{} \\
+\end{tabular}
+
+
+%----------------------------------------------------------------------------------------
+%	INTERESTS AND ACTIVITIES
+%----------------------------------------------------------------------------------------
+
+\section{Personal Projects}
+
+\begin{tabular}{r|p{9.5cm}}
+\textsc{Feb} 2018-\hphantom{\textsc{Mar} 2018} & \textbf{\href{https://github.com/gharveymn/matshare}{\color{black}matshare}} | C \\ 
+\textsc{Sep} 2017-\textsc{Nov} 2017 & \footnotesize{Implements multiprocess shared memory for MATLAB allowing for sharing of variables between different instances. Developed to align with the MATLAB design paradigm, the function also employs its own garbage collection, automatic initialization, and thread safety to allow users to use the function without worry of causing critical errors.}\\
+\multicolumn{2}{c}{} \vspace{-1ex}\\
+
+%------------------------------------------------
+
+\textsc{Aug} 2017-\textsc{Jan} 2018 & \textbf{\href{https://github.com/gharveymn/getmatvar}{\color{black}getmatvar}} | C \\
+& \footnotesize{A partial loader for MATLAB which allows users to extract individual variables from MAT-files. Typical usage results in performance 3-6x faster than the native function. This is accomplished through multithreading and MAT-file specific optimization of parsing the HDF5 format.}\\
+\multicolumn{2}{c}{} \vspace{-1ex}\\
+
+%------------------------------------------------
+
+\textsc{Aug} 2017 & \textbf{\textbf{\href{https://github.com/gharveymn/ezq}{\color{black}ezq}}} | C \\
+& \footnotesize{A simple library for manipulating queues in C created for use in \textbf{\href{https://github.com/gharveymn/getmatvar}{\color{black}getmatvar}}. Allows for users to specify a memory freeing function for easy memory management, and is also thread-safe.} \\
+\multicolumn{2}{c}{} \vspace{-1ex}\\
+
+%------------------------------------------------
+
+\textsc{May} 2017-\textsc{Aug} 2017 & \textbf{\href{https://github.com/gharveymn/navierstokes}{\color{black}navierstokes}} | MATLAB \\
+& \footnotesize{Solvers for the Navier-Stokes equations in time dependent staggered grid and time independent streamfunction formulations.}\\
+\multicolumn{2}{c}{} \vspace{-1ex}\\
+
+%------------------------------------------------
+
+\textsc{May} 2017 & \textbf{\href{https://github.com/gharveymn/nightswitch}{\color{black}nightswitch}} | TypeScript \\
+& \footnotesize{Automatically switches Visual Studio Code theme between specified night and day themes at sunrise/sunset based on user location. A lighter version called \textbf{\href{https://github.com/gharveymn/nightswitch-lite}{\color{black}NightSwitch-lite}} does with without automatic geolocation.}\\
+\multicolumn{2}{c}{} \vspace{-1ex}\\
+
+%------------------------------------------------
+
+\textsc{May} 2017 & \textbf{\href{https://github.com/gharveymn/bilogis}{\color{black}bilogis}} | MATLAB \\
+& \footnotesize{Provides a set of logistic functions with fixed end points. Useful for functions which need a consistent logistic map to a certain compact interval with dynamic logistic weight.}\\
+\multicolumn{2}{c}{} \vspace{-1ex}\\
+\end{tabular}
+
+%----------------------------------------------------------------------------------------
+
+\section{Course Projects}
+
+\begin{tabular}{r|p{9.5cm}}
+\textsc{April} 2017 & PHYS 4250 (University of Manitoba) \\
+& \textbf{Efficient Path Optimization with Quadtree Paritioning} \\
+& \footnotesize{Continuous empty space is converted into a grid using the quadtree data structure. Approximate fastest paths are then efficiently found by treating the grid as a weighted graph.}\\
+\multicolumn{2}{c}{} \\
+
+%------------------------------------------------
+
+\textsc{December} 2016 & MATH 4370 (University of Manitoba) \\
+& \textbf{Linear Algebra in Non-Archimedean Fields} \\
+& \footnotesize{Created lecture notes with introductory theorems and results regarding linear algebra in non-Archimedean Fields. Intended for teaching of an introductory course on the topic.}\\
+\multicolumn{2}{c}{} \\
+
+%------------------------------------------------
+
+\textsc{Aug} 2016 & MATH 4242 (University of Minnesota) \\
+& \textbf{Analysis of Image Projection and Recognition Algorithms} \\
+& \footnotesize{Data collected from the eigenface algorithm is analyzed to understand the behavior and meaning of images at the limits of recognition set by certain input parameters.}\\
+\multicolumn{2}{c}{} \\
+\end{tabular}
+
+%----------------------------------------------------------------------------------------
+%Volunteering 
+%----------------------------------------------------------------------------------------
+
+\section{Volunteering}
+
+\begin{tabular}{r|p{9.5cm}}
+\textsc{Dec} 2016- & Website Administrator \\
+& \footnotesize{Creator and maintainer of the new website for the Organization of Physics Undergraduates (\href{opus.physics.umanitoba.ca}{opus.physics.umanitoba.ca}).}\\
+\multicolumn{2}{c}{} \\
+
+%------------------------------------------------
+
+\textsc{Sep} 2016- & Physics Tutor \\ 
+& \footnotesize{Volunteer tutoring for students in first and second year courses. Average 3 hours per week.}\\
+\multicolumn{2}{c}{} \\
+
+%------------------------------------------------
+
+\textsc{May} 2017 & Science Rendezvous Volunteer \\
+& \footnotesize{A science outreach event for the general public. Hosted a physics demonstration booth.}\\
+\multicolumn{2}{c}{} \\
+\end{tabular}
+
+%----------------------------------------------------------------------------------------
+%	SCHOLARSHIPS AND ADDITIONAL INFO
+%----------------------------------------------------------------------------------------
+
+\section{Awards and Scholarships}
+
+\begin{tabular}{rl}
+\textsc{Oct} 2017 & \textbf{Guenter Krause Award} \\
+\textsc{Apr} 2017 & \textbf{Undergraduate Research Award} \\
+\textsc{Nov} 2016 & \textbf{Centennial Scholarship in Physics} \\
+\textsc{Nov} 2016 & \textbf{Harold R. Coish Memorial Scholarship} \\
+\textsc{Jul} 2016 & \textbf{UMSU Scholarship}
+\end{tabular}
+
+\section{Personal Information}
+\begin{center}
+\begin{tabular}{rl}
+\textbf{Citizenship} & United States \\
+\textbf{Residency} & Canada (student/work visa) \\
+\textbf{Languages} & English \\
+\textbf{Website} & \href{https://github.com/gharveymn}{https://github.com/gharveymn}
+\end{tabular}
+\end{center}
+
+
+\end{document}
