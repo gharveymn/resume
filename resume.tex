@@ -1,21 +1,23 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Plasmati Graduate CV
-% LaTeX Template
-% Version 1.0 (24/3/13)
+% Freeman Curriculum Vitae
+% XeLaTeX Template
+% Version 3.0 (September 3, 2021)
 %
-% This template has been downloaded from:
-% http://www.LaTeXTemplates.com
+% This template originates from:
+% https://www.LaTeXTemplates.com
 %
-% Original author:
-% Alessandro Plasmati (alessandro.plasmati@gmail.com)
+% Authors:
+% Vel (vel@LaTeXTemplates.com)
+% Alessandro Plasmati
 %
 % License:
-% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+% CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
 %
-% Important note:
-% This template needs to be compiled with XeLaTeX.
-% The main document font is called Fontin and can be downloaded for free
-% from here: http://www.exljbris.com/fontin.html
+%!TEX program = xelatex
+% NOTE: this template must be compiled with XeLaTeX rather than PDFLaTeX
+% due to the custom fonts used. The line above should ensure this happens
+% automatically, but if it doesn't, your LaTeX editor should have a simple toggle
+% to switch to using XeLaTeX.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -23,229 +25,321 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[letter,10pt]{article} % Default font size and paper size
-\RequirePackage[left=1.4in,right=1.4in,top=1in,bottom=1in]{geometry}
+\documentclass[
+  9pt, % Default font size, can be between 8pt and 12pt
+]{FreemanCV}
 
 \usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{enumitem}
 
-\usepackage{listings}
+\renewcommand{\footnotesize}{\fontsize{6pt}{6pt}\selectfont}
 
-\usepackage{fontspec} % For loading fonts
-\defaultfontfeatures{Mapping=tex-text}
-\setmainfont{Fontin} % Main document font
+\columnratio{0.55, 0.45} % Widths of the two columns, specified here as a ratio summing to 1 to correspond to percentages; adjust as needed for your content
 
-\usepackage{xunicode,xltxtra,url,parskip} % Formatting packages
+% Headers and footers can be added with the following commands: \lhead{}, \rhead{}, \lfoot{} and \rfoot{}
+% Example right footer:
+%\rfoot{\textcolor{headings}{\sffamily Last update: \today. Typeset with Xe\LaTeX}}
 
-\usepackage[usenames,dvipsnames]{xcolor} % Required for specifying custom colors
-
-\addtolength{\voffset}{-1.3cm}
-
-\usepackage{hyperref} % Required for adding links	and customizing them
-\definecolor{linkcolour}{rgb}{0,0.2,0.6} % Link color
-\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour} % Set link colors throughout the document
-
-\usepackage{titlesec} % Used to customize the \section command
-\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule] % Text formatting of sections
-\titlespacing{\section}{0pt}{3pt}{3pt} % Spacing around sections
+%----------------------------------------------------------------------------------------
 
 \begin{document}
 
-\pagestyle{empty} % Removes page numbering
+\begin{tabularx}{1\textwidth}{
+  >{\setlength\hsize{1.65\hsize}\raggedleft\arraybackslash}X
+  @{\hspace{.5\columnsep}} | @{\hspace{.5\columnsep}}
+  >{\setlength\hsize{0.082\hsize}\centering\arraybackslash}X
+  @{\hspace{\tabcolsep}}
+  >{\setlength\hsize{1.268\hsize}\raggedright\arraybackslash}X
+}
+  \multirow{4}{*}{\hfill\bfseries\fontsize{30pt}{36pt}\selectfont Gene Harvey}
+    & \raisebox{-1pt}{\faHome} & 9880 Crestwood Ter., Eden Prairie, MN 55347 \\
+    & \raisebox{-1pt}{\faPhone} & +1 (952) 999-6539 \\
+    & \raisebox{-1pt}{\small\faEnvelope} & \href{mailto:gharveymn@gmail.com}{gharveymn@gmail.com} \\
+    & \raisebox{-1pt}{\faGithub} & \href{https://github.com/gharveymn}{https://github.com/gharveymn} \\
+\end{tabularx}
 
-\font\fb=cmr10 % Change the font of the \LaTeX command under the skills section
+\bigskip % Vertical whitespace
 
-%----------------------------------------------------------------------------------------
-%	NAME AND CONTACT INFORMATION
-%----------------------------------------------------------------------------------------
+\vfill % Push content to the top of the box
 
-\par{\centering{\Huge Gene \textsc{Harvey}}\\\smallskip
-{\footnotesize\hspace{0.6cm}\href{mailto:gharveym@gmail.com}{gharveym@gmail.com} | 952-999-6539 | \href{https://github.com/gharveymn}{https://github.com/gharveymn}}\bigskip\par} % Your name
-
-\begin{center}{\small
-\begin{tabularx}{\textwidth}{cXc}
-\begin{tabular}{l}
-\textbf{Current Address} \\
-1228-30 Maclean Crescent \\
-Winnipeg, MB, R3T2N1 \\
-Canada \\
-\end{tabular} 
-&&
-\begin{tabular}{r}
-\textbf{Permanent Address} \\
-9880 Crestwood Terrace \\
-Eden Prairie, MN, 55347 \\
-United States
-\end{tabular}
-\end{tabularx}}
-\end{center}
-
-\section{Objective}
-Seeking a challenging position as a Software Engineering Intern utilizing exceptional software engineering skills in data analysis, quantitative data processing, and computational physics, augmented by mathematical training with specialization in linear algebra. I also seek the opportunity to learn to use these skills for effective utilization of machine learning. Also experienced in documented and undocumented MATLAB MEX API.
-
-\section{Technical Skills}
-\begin{tabular}{r|ll}
-Languages & \textbf{Proficient} & C, MATLAB, Python, Java, \fb\LaTeX \\[2pt]
-& \textbf{Has Experience} & Wolfram Language, Typescript, Javascript, \\
-&& PHP, Makefile, CMake, HTML, CSS, Markdown \\
-\multicolumn{3}{c}{} \vspace{-1ex}\\
-Tools & \textbf{Primary} & Git, CLion, Visual Studio, TeXstudio, VSCode, GDB, \\
-&& Valgrind, PyCharm, Intellij IDEA, Mathematica \\
-\multicolumn{3}{c}{} \vspace{-1ex}\\
-Environments & \textbf{Primary} & Windows 10 \\[2pt]
-& \textbf{Familiar} & Manjaro, Ubuntu, Linux Mint \\
-\end{tabular}
+\begin{paracol}{2} % Begin two-column mode
 
 %----------------------------------------------------------------------------------------
-%EDUCATION
+%	WORK EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\section{Work Experience}
+
+% Each job is added with a \jobentry command. Below is an empty one to use as a template:
+
+%\jobentry
+%	{} % Duration
+%	{} % Employer
+%	{} % Job title
+%	{} % Description
+
+% All 5 parameters must be supplied but any can be empty if you don't need them
+
+%------------------------------------------------
+
+\jobentry
+  {May 2019 -- Present}
+  {}
+  {Open Source Software Developer}
+  {Created projects written in C++ and CMake, and contributed to various other projects.
+   See \hyperref[sec:Open Source]{Personal Open Source Projects} for a selection of
+   personal projects.}
+
+\jobentry
+  {Sep 2017 -- Dec 2017} % Duration
+  {University of Manitoba} % Employer
+  {Student Research Assistant} % Job title
+  {Developed a multiprocess shared memory subsystem for MATLAB as well as a multi-threaded partial loader for MATLAB 7.3 HDF5 MAT-files.}
+
+%------------------------------------------------
+
+\jobentry
+  {May 2017 -- Aug 2017} % Duration
+  {NQube} % Employer
+  {Consultant} % Job title
+  {Worked on code optimization in automated trading models. Increased computation performance in some areas by up to 90\% with vectorization in MATLAB. Other work involved evaluation of neural network based models.}
+
+%------------------------------------------------
+
+\jobentry
+  {May 2017 -- Sep 2017} % Duration
+  {University of Manitoba} % Employer
+  {Undergraduate Researcher} % Job title
+  {Developed finite difference solvers for the Navier-Stokes equations in time dependent and independent forms with MATLAB. Began analysis on flow in a symmetric channel with special attention to eddy bifurcation.} % Description
+
+%----------------------------------------------------------------------------------------
+%	REFERENCES
+%----------------------------------------------------------------------------------------
+
+\section{Personal Open Source Projects}
+\label{sec:Open Source}
+
+Other projects may be found on my
+\href{https://github.com/gharveymn?tab=repositories}{Github profile} which meet the same
+standard of code quality, but are not fully documented.
+
+\medskip
+
+\begin{project}{matshare}{C}{https://github.com/gharveymn/matshare}
+  \item Created a subsystem for multi-process shared memory in MATLAB.
+  \item Implemented mechanisms for automatic garbage collection, thread-safe
+        memory creation, and in-place overwriting.
+\end{project}
+
+ \begin{project}{gch::small\_vector}{C++}{https://github.com/gharveymn/small\_vector}
+   \item Wrote a fully featured single header library implementing a vector container with a small buffer optimization.
+   \item Performance on par with the implementation by Boost.
+ \end{project}
+
+\begin{project}{GNU Octave - CMake Build}{CMake}{https://sourceforge.net/projects/gnu-octave-cmake-build}
+  \item Translated the build system of GNU Octave from Autotools to CMake.
+  \item Resulted in a large performance increase when configuring the project
+        and allowed for other features like unity builds.
+\end{project}
+
+\begin{project}{octave-ir}{C++}{https://github.com/gharveymn/octave-ir}
+  \item In the process of writing a just-in-time compiler targeting the Octave/MATLAB language.
+  \item Can generate code for complex expressions like nested loops and uninitialized/indeterminate
+        variables.
+\end{project}
+
+\begin{project}{MEX Function Templates}{C\#}{https://marketplace.visualstudio.com/items?itemName=gharveymn.MEXFunctionTemplates}
+  \item Created an extension for Visual Studio providing templates for creating MEX function projects.
+  \item Over 18,000 installs, and the endorsement of an engineer at MathWorks
+\end{project}
+
+\begin{project}{NightSwitch}{TypeScript}{https://marketplace.visualstudio.com/items?itemName=gharveymn.nightswitch}
+  \item Wrote a simple Visual Studio Code extension which switches between user specified
+        day and night themes at sunset and sunrise.
+\end{project}
+
+\medskip % Extra vertical whitespace before the next section
+
+%----------------------------------------------------------------------------------------
+
+\switchcolumn % Switch to the second (right) column
+
+\section{Technical Knowledge}
+
+% This section is laid out using a table. A \tableentry command adds lines with the following parameters:
+
+%\tableentry{Heading}{Content}{spaceafter}
+% All 3 parameters must be supplied but any can be empty if you don't need them
+% A "spaceafter" value in the third parameter will add some vertical space -- this is to be used between headings, leave it empty for no extra space
+
+%------------------------------------------------
+
+\begin{supertabular}{r l} % Start a table with two columns, the table will ensure everything is aligned
+
+  %------------------------------------------------
+
+  \tableentry{Proficient}{C++, C, CMake, MATLAB/Octave}{spaceafter}
+
+  %------------------------------------------------
+
+  \tableentry{Adept}{\LaTeX{}, Python, Java, C\#, Autotools}{spaceafter}
+
+  %------------------------------------------------
+
+  \tableentry{Beginner}{Bash, TypeScript}{spaceafter}
+
+  %------------------------------------------------
+
+\end{supertabular}
+
+\section{Working Environment and Tools}
+
+\begin{supertabular}{r l} % Start a table with two columns, the table will ensure everything is aligned
+
+  %------------------------------------------------
+
+  \tableentry{Primary}{Microsoft Windows, CLion,}{}
+  \tableentry{}{MSYS2-MinGW, Git, CTest}{spaceafter}
+
+  %------------------------------------------------
+
+  \tableentry{Secondary}{Arch Linux, Zsh, Visual Studio Code,}{}
+  \tableentry{}{Visual Studio}{spaceafter}
+
+  %------------------------------------------------
+
+\end{supertabular}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
 %----------------------------------------------------------------------------------------
 
 \section{Education}
 
-\begin{tabular}{rcrl}
-\textsc{Sep} 2015- && \textbf{Degree} & Bachelor of Science, University of Manitoba \\
-&& \textbf{Major} & Mathematics - Physics and Astronomy (Joint Honours) \\
-&& \textbf{Minor} & Computer Science \\
-&& \textbf{Graduation} & May 2019 (Expected) \\
-\end{tabular}
+% Each qualification entry is added with a \qualificationentry command. Below is an empty one to use as a template:
 
-%----------------------------------------------------------------------------------------
-%	WORK EXPERIENCE 
-%----------------------------------------------------------------------------------------
+%\qualificationentry
+%	{} % Duration
+%	{} % Degree
+%	{} % Honors, achievements or distinctions (e.g. first class honors)
+%	{} % Department
+%	{} % Institution
 
-\section{Work Experience}
-\begin{tabular}{r|p{9.5cm}}
-\textsc{Sep} 2017-\textsc{Dec} 2017 & \textbf{Student Research Assistant} (University of Manitoba) \\ 
-& \footnotesize{Developing multiprocess shared memory solutions for MATLAB. Created a fast partial loader for MATLAB MAT-files with implementation of multithreaded byte-level parsing of the HDF5 format (typically 3-6x faster than the native function).}\\
-\multicolumn{2}{c}{} \\
+% All 5 parameters must be supplied but any can be empty if you don't need them
 
 %------------------------------------------------
 
-\textsc{May} 2017-\textsc{Aug} 2017 & \textbf{Consultant} (NQube)\\
-& \footnotesize{Worked on code optimization in automated trading models. Increased performance in computation by up to 90\% with vectorization in MATLAB. Other work involved evaluation of neural network based models. Also wrote a training manual for Git.}\\
-\multicolumn{2}{c}{} \\
+\begin{supertabular}{r l} % Start a table with two columns, the table will ensure everything is aligned
 
-%------------------------------------------------
+  %------------------------------------------------
 
-\textsc{May} 2017-\textsc{Sep} 2017 & \textbf{Undergraduate Researcher} (University of Manitoba)\\
-& \footnotesize{Developed finite difference solvers for the Navier-Stokes equations in time dependent and independent forms with MATLAB. Began analysis on flow in a symmetric channel with special attention to eddy bifurcation.}\\
-\multicolumn{2}{c}{} \\
-\end{tabular}
+  \qualificationentry
+    {2015 -- 2019} % Duration
+    {Bachelor of Science} % Degree
+    {} % Honors, achievements or distinctions (e.g. first class honors)
+    {General Science (Physics)} % Department
+    {University of Manitoba} % Institution
 
+  %------------------------------------------------
 
-%----------------------------------------------------------------------------------------
-%	INTERESTS AND ACTIVITIES
-%----------------------------------------------------------------------------------------
-
-\section{Personal Projects}
-
-\begin{tabular}{r|p{9.5cm}}
-\textsc{Feb} 2018-\hphantom{\textsc{Mar} 2018} & \textbf{\href{https://github.com/gharveymn/matshare}{\color{black}matshare}} | C \\ 
-\textsc{Sep} 2017-\textsc{Nov} 2017 & \footnotesize{Implements multiprocess shared memory for MATLAB allowing for sharing of variables between different instances. Developed to align with the MATLAB design paradigm, the function also employs its own garbage collection, automatic initialization, and thread safety to allow users to use the function without worry of causing critical errors.}\\
-\multicolumn{2}{c}{} \vspace{-1ex}\\
-
-%------------------------------------------------
-
-\textsc{Aug} 2017-\textsc{Jan} 2018 & \textbf{\href{https://github.com/gharveymn/getmatvar}{\color{black}getmatvar}} | C \\
-& \footnotesize{A partial loader for MATLAB which allows users to extract individual variables from MAT-files. Typical usage results in performance 3-6x faster than the native function. This is accomplished through multithreading and MAT-file specific optimization of parsing the HDF5 format.}\\
-\multicolumn{2}{c}{} \vspace{-1ex}\\
-
-%------------------------------------------------
-
-\textsc{Aug} 2017 & \textbf{\textbf{\href{https://github.com/gharveymn/ezq}{\color{black}ezq}}} | C \\
-& \footnotesize{A simple library for manipulating queues in C created for use in \textbf{\href{https://github.com/gharveymn/getmatvar}{\color{black}getmatvar}}. Allows for users to specify a memory freeing function for easy memory management, and is also thread-safe.} \\
-\multicolumn{2}{c}{} \vspace{-1ex}\\
-
-%------------------------------------------------
-
-\textsc{May} 2017-\textsc{Aug} 2017 & \textbf{\href{https://github.com/gharveymn/navierstokes}{\color{black}navierstokes}} | MATLAB \\
-& \footnotesize{Solvers for the Navier-Stokes equations in time dependent staggered grid and time independent streamfunction formulations.}\\
-\multicolumn{2}{c}{} \vspace{-1ex}\\
-
-%------------------------------------------------
-
-\textsc{May} 2017 & \textbf{\href{https://github.com/gharveymn/nightswitch}{\color{black}nightswitch}} | TypeScript \\
-& \footnotesize{Automatically switches Visual Studio Code theme between specified night and day themes at sunrise/sunset based on user location. A lighter version called \textbf{\href{https://github.com/gharveymn/nightswitch-lite}{\color{black}NightSwitch-lite}} does with without automatic geolocation.}\\
-\multicolumn{2}{c}{} \vspace{-1ex}\\
-
-%------------------------------------------------
-
-\textsc{May} 2017 & \textbf{\href{https://github.com/gharveymn/bilogis}{\color{black}bilogis}} | MATLAB \\
-& \footnotesize{Provides a set of logistic functions with fixed end points. Useful for functions which need a consistent logistic map to a certain compact interval with dynamic logistic weight.}\\
-\multicolumn{2}{c}{} \vspace{-1ex}\\
-\end{tabular}
-
-%----------------------------------------------------------------------------------------
+\end{supertabular}
 
 \section{Course Projects}
 
-\begin{tabular}{r|p{9.5cm}}
-\textsc{April} 2017 & PHYS 4250 (University of Manitoba) \\
-& \textbf{Efficient Path Optimization with Quadtree Paritioning} \\
-& \footnotesize{Continuous empty space is converted into a grid using the quadtree data structure. Approximate fastest paths are then efficiently found by treating the grid as a weighted graph.}\\
-\multicolumn{2}{c}{} \\
+\paper
+  {Efficient Path Optimization with Quadtree Partitioning}
+  {Continuous empty space is converted into a grid using the quadtree data structure.
+   Approximate fastest paths are then efficiently found by treating the grid as a
+   weighted graph.}
 
-%------------------------------------------------
+\paper
+  {Linear Algebra in Non-Archimedean Fields}
+  {Lecture notes with introductory theorems and results regarding linear algebra
+   in non-Archimedean Fields. Intended for teaching of an introductory course on
+   the topic.}
 
-\textsc{December} 2016 & MATH 4370 (University of Manitoba) \\
-& \textbf{Linear Algebra in Non-Archimedean Fields} \\
-& \footnotesize{Created lecture notes with introductory theorems and results regarding linear algebra in non-Archimedean Fields. Intended for teaching of an introductory course on the topic.}\\
-\multicolumn{2}{c}{} \\
-
-%------------------------------------------------
-
-\textsc{Aug} 2016 & MATH 4242 (University of Minnesota) \\
-& \textbf{Analysis of Image Projection and Recognition Algorithms} \\
-& \footnotesize{Data collected from the eigenface algorithm is analyzed to understand the behavior and meaning of images at the limits of recognition set by certain input parameters.}\\
-\multicolumn{2}{c}{} \\
-\end{tabular}
+\paper
+  {Analysis of Image Projection and Recognition Algorithms}
+  {Data collected from the eigenface algorithm is analyzed to understand the
+   behavior and meaning of images at the limits of recognition set by certain
+   input parameters.}
 
 %----------------------------------------------------------------------------------------
-%Volunteering 
+%	SKILLS DESCRIPTION
 %----------------------------------------------------------------------------------------
 
-\section{Volunteering}
+\section{Contributions to Other Projects}
 
-\begin{tabular}{r|p{9.5cm}}
-\textsc{Dec} 2016- & Website Administrator \\
-& \footnotesize{Creator and maintainer of the new website for the Organization of Physics Undergraduates (\href{opus.physics.umanitoba.ca}{opus.physics.umanitoba.ca}).}\\
-\multicolumn{2}{c}{} \\
+\begin{supertabular}{r >{\raggedright\arraybackslash}p{.65\linewidth}}
+  %------------------------------------------------
 
-%------------------------------------------------
+  \tableentry{Maintainer}{\textbf{mingw-w64-sundials}}{}
+  \tableentry{}{The MSYS2-MinGW package providing the SUNDIALS library.}{spaceafter}
 
-\textsc{Sep} 2016- & Physics Tutor \\ 
-& \footnotesize{Volunteer tutoring for students in first and second year courses. Average 3 hours per week.}\\
-\multicolumn{2}{c}{} \\
+  %------------------------------------------------
 
-%------------------------------------------------
+  \tableentry{Contributer}{\textbf{GNU Octave}}{}
+  \tableentry{}{Various bug fixes.}{spaceafter}
 
-\textsc{May} 2017 & Science Rendezvous Volunteer \\
-& \footnotesize{A science outreach event for the general public. Hosted a physics demonstration booth.}\\
-\multicolumn{2}{c}{} \\
-\end{tabular}
+  %------------------------------------------------
+
+\end{supertabular}
+%\footnotetext{\url{https://packages.msys2.org/base/mingw-w64-sundials}}
+
 
 %----------------------------------------------------------------------------------------
-%	SCHOLARSHIPS AND ADDITIONAL INFO
+%	AWARDS
 %----------------------------------------------------------------------------------------
 
 \section{Awards and Scholarships}
 
-\begin{tabular}{rl}
-\textsc{Oct} 2017 & \textbf{Guenter Krause Award} \\
-\textsc{Apr} 2017 & \textbf{Undergraduate Research Award} \\
-\textsc{Nov} 2016 & \textbf{Centennial Scholarship in Physics} \\
-\textsc{Nov} 2016 & \textbf{Harold R. Coish Memorial Scholarship} \\
-\textsc{Jul} 2016 & \textbf{UMSU Scholarship}
-\end{tabular}
+% This section is laid out using a table. A \tableentry command adds lines with the following parameters:
 
-\section{Personal Information}
-\begin{center}
-\begin{tabular}{rl}
-\textbf{Citizenship} & United States \\
-\textbf{Residency} & Canada (student/work visa) \\
-\textbf{Languages} & English \\
-\textbf{Website} & \href{https://github.com/gharveymn}{https://github.com/gharveymn}
-\end{tabular}
-\end{center}
+%\tableentry{Heading}{Content}{spaceafter}
+% All 3 parameters must be supplied but any can be empty if you don't need them
+% A "spaceafter" value in the third parameter will add some vertical space -- this is to be used between headings, leave it empty for no extra space
 
+%------------------------------------------------
+
+\begin{supertabular}{r l} % Start a table with two columns, the table will ensure everything is aligned
+
+  %------------------------------------------------
+
+  \tableentry{2017}{\textbf{Guenter Krause Award}}{}
+  \tableentry{2017}{\textbf{Undergraduate Research Award}}{}
+  \tableentry{2016}{\textbf{Centennial Scholarship in Physics}}{}
+  \tableentry{2016}{\textbf{Harold R. Coish Memorial Scholarship}}{}
+  \tableentry{2016}{\textbf{UMSU Scholarship}}{spaceafter}
+
+  %------------------------------------------------
+
+\end{supertabular}
+
+\section{Volunteering}
+
+\jobentry
+  {2016-2019} % Duration
+  {} % Employer
+  {\normalsize Physics Tutor} % Job title
+  {Tutored students in first and second year physics courses.}
+
+\jobentry
+  {2016-2019} % Duration
+  {} % Employer
+  {\normalsize Website Administrator} % Job title
+  {Created and maintained a website for the Organization of Physics Undergraduates at University of Manitoba.}
+
+\jobentry
+  {2017} % Duration
+  {} % Employer
+  {\normalsize Science Rendezvous Volunteer} % Job title
+  {Hosted a physics demonstration booth at a science outreach event.}
+
+%----------------------------------------------------------------------------------------
+
+\end{paracol} % End two-column mode
+
+%----------------------------------------------------------------------------------------
 
 \end{document}
