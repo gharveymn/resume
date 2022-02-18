@@ -39,13 +39,17 @@
 
 % Headers and footers can be added with the following commands: \lhead{}, \rhead{}, \lfoot{} and \rfoot{}
 % Example right footer:
-%\rfoot{\textcolor{headings}{\sffamily Last update: \today. Typeset with Xe\LaTeX}}
+%\rfoot{\textcolor{footers}{
+%  \begin{tabular}{r|l}
+%    \raisebox{-1pt}{\today} & \raisebox{-1pt}{Typeset with \XeLaTeX}
+%  \end{tabular}
+%}}
 
 %----------------------------------------------------------------------------------------
 
 \begin{document}
 
-\begin{tabularx}{1\textwidth}{
+\begin{tabularx}{\textwidth}{
   >{\setlength\hsize{1.65\hsize}\raggedleft\arraybackslash}X
   @{\hspace{.5\columnsep}} | @{\hspace{.5\columnsep}}
   >{\setlength\hsize{0.082\hsize}\centering\arraybackslash}X
@@ -54,7 +58,7 @@
 }
   \multirow{4}{*}{\hfill\bfseries\fontsize{30pt}{36pt}\selectfont Gene Harvey}
     & \raisebox{-1pt}{\faHome} & 9880 Crestwood Ter., Eden Prairie, MN 55347 \\
-    & \raisebox{-1pt}{\faPhone} & +1 (952) 999-6539 \\
+    & \raisebox{-1pt}{\faPhone} & \href{tel:19529996539}{+1 (952) 999-6539} \\
     & \raisebox{-1pt}{\small\faEnvelope} & \href{mailto:gharveymn@gmail.com}{gharveymn@gmail.com} \\
     & \raisebox{-1pt}{\faGithub} & \href{https://github.com/gharveymn}{https://github.com/gharveymn} \\
 \end{tabularx}
@@ -71,97 +75,104 @@
 
 \section{Work Experience}
 
-% Each job is added with a \jobentry command. Below is an empty one to use as a template:
+\begin{jobentry}{2017 -- Present}{}{Open Source Software Developer}
+  Created open source projects using a variety of languages and technologies, and also contributed
+  to various other projects. The following is a selection of projects which I have authored.
 
-%\jobentry
-%	{} % Duration
-%	{} % Employer
-%	{} % Job title
-%	{} % Description
+  \setlist{labelsep=.5em}
+  \begin{description}[
+    noitemsep,
+    topsep=0pt,
+    labelindent=1em,
+    leftmargin=*,
+    labelsep=0pt,
+    rightmargin=1em
+  ]
+    \item
+    \begin{project*}{matshare}{C}{https://github.com/gharveymn/matshare}
+      \item Created a subsystem for multi-process shared memory in MATLAB.
+      \item Implemented mechanisms for automatic garbage collection, thread-safe
+            memory creation, and in-place overwriting.
+    \end{project*}
 
-% All 5 parameters must be supplied but any can be empty if you don't need them
+    \item
+    \begin{project*}{gch::small\_vector}{C++}{https://github.com/gharveymn/small\_vector}
+      \item Wrote a fully featured single header library implementing a vector container with a small buffer optimization.
+      \item Enforces concept requirements and supports constexpr with C++20.
+      \item Performance on par with the implementation by Boost.
+    \end{project*}
 
-%------------------------------------------------
+    \item
+    \begin{project*}{GNU Octave - CMake Build}{CMake}{https://sourceforge.net/projects/gnu-octave-cmake-build}
+      \item Translated the build system of GNU Octave from Autotools to CMake.
+      \item Offers a 3-5x performance increase when configuring the project
+            and allows for other features like unity builds and multi-configs.
+    \end{project*}
 
-\jobentry
-  {May 2019 -- Present}
-  {}
-  {Open Source Software Developer}
-  {Created projects written in C++ and CMake, and contributed to various other projects.
-   See \hyperref[sec:Open Source]{Personal Open Source Projects} for a selection of
-   personal projects.}
+    \item
+    \begin{project*}{octave-ir}{C++}{https://github.com/gharveymn/octave-ir}
+      \item Currently writing an LLVM-based just-in-time compiler targeting the Octave language.
+      \item Can generate code for complex expressions like nested loops and uninitialized/indeterminate
+            variables.
+      \item Tested with CTest.
+    \end{project*}
 
-\jobentry
-  {Sep 2017 -- Dec 2017} % Duration
-  {University of Manitoba} % Employer
-  {Student Research Assistant} % Job title
-  {Developed a multiprocess shared memory subsystem for MATLAB as well as a multi-threaded partial loader for MATLAB 7.3 HDF5 MAT-files.}
+    \item
+    \begin{project*}{MEX Function Templates}{C\#}{https://marketplace.visualstudio.com/items?itemName=gharveymn.MEXFunctionTemplates}
+      \item Created an extension for Visual Studio providing templates for creating MEX function projects.
+      \item Over 18,000 installs, and the endorsement of an engineer at MathWorks.
+    \end{project*}
 
-%------------------------------------------------
+    \item
+    \begin{project*}{NightSwitch}{TypeScript}{https://marketplace.visualstudio.com/items?itemName=gharveymn.nightswitch}
+      \item Wrote a simple extension for Visual Studio Code which switches between user specified
+            day and night themes at sunrise and sunset.
+    \end{project*}
+  \end{description}
+\end{jobentry}
 
-\jobentry
-  {May 2017 -- Aug 2017} % Duration
-  {NQube} % Employer
-  {Consultant} % Job title
-  {Worked on code optimization in automated trading models. Increased computation performance in some areas by up to 90\% with vectorization in MATLAB. Other work involved evaluation of neural network based models.}
+\begin{jobentry}{Sep 2017 -- Dec 2017}{University of Manitoba}{Student Research Assistant}
+  Developed a multi-process shared memory subsystem for MATLAB as well as a multi-threaded
+  partial loader for MATLAB 7.3 HDF5 MAT-files.
+\end{jobentry}
 
-%------------------------------------------------
+\begin{jobentry}{May 2017 -- Aug 2017}{NQube}{Consultant}
+  Worked on code optimization in automated trading models. Increased computation performance
+  in some areas by up to 90\% with vectorization in MATLAB. Other work involved evaluation of
+  neural network based models.
+\end{jobentry}
 
-\jobentry
-  {May 2017 -- Sep 2017} % Duration
-  {University of Manitoba} % Employer
-  {Undergraduate Researcher} % Job title
-  {Developed finite difference solvers for the Navier-Stokes equations in time dependent and independent forms with MATLAB. Began analysis on flow in a symmetric channel with special attention to eddy bifurcation.} % Description
-
-%----------------------------------------------------------------------------------------
-%	REFERENCES
-%----------------------------------------------------------------------------------------
-
-\section{Personal Open Source Projects}
-\label{sec:Open Source}
-
-Other projects may be found on my
-\href{https://github.com/gharveymn?tab=repositories}{Github profile} which meet the same
-standard of code quality, but are not fully documented.
-
-\medskip
-
-\begin{project}{matshare}{C}{https://github.com/gharveymn/matshare}
-  \item Created a subsystem for multi-process shared memory in MATLAB.
-  \item Implemented mechanisms for automatic garbage collection, thread-safe
-        memory creation, and in-place overwriting.
-\end{project}
-
- \begin{project}{gch::small\_vector}{C++}{https://github.com/gharveymn/small\_vector}
-   \item Wrote a fully featured single header library implementing a vector container with a small buffer optimization.
-   \item Performance on par with the implementation by Boost.
- \end{project}
-
-\begin{project}{GNU Octave - CMake Build}{CMake}{https://sourceforge.net/projects/gnu-octave-cmake-build}
-  \item Translated the build system of GNU Octave from Autotools to CMake.
-  \item Resulted in a large performance increase when configuring the project
-        and allowed for other features like unity builds.
-\end{project}
-
-\begin{project}{octave-ir}{C++}{https://github.com/gharveymn/octave-ir}
-  \item In the process of writing a just-in-time compiler targeting the Octave/MATLAB language.
-  \item Can generate code for complex expressions like nested loops and uninitialized/indeterminate
-        variables.
-\end{project}
-
-\begin{project}{MEX Function Templates}{C\#}{https://marketplace.visualstudio.com/items?itemName=gharveymn.MEXFunctionTemplates}
-  \item Created an extension for Visual Studio providing templates for creating MEX function projects.
-  \item Over 18,000 installs, and the endorsement of an engineer at MathWorks
-\end{project}
-
-\begin{project}{NightSwitch}{TypeScript}{https://marketplace.visualstudio.com/items?itemName=gharveymn.nightswitch}
-  \item Wrote a simple Visual Studio Code extension which switches between user specified
-        day and night themes at sunset and sunrise.
-\end{project}
-
-\medskip % Extra vertical whitespace before the next section
+\begin{jobentry}{May 2017 -- Sep 2017}{University of Manitoba}{Undergraduate Researcher}
+  Developed finite difference solvers for the Navier-Stokes equations in time dependent and
+  independent forms with MATLAB. Began analysis on flow in a symmetric channel with special
+  attention to eddy bifurcation.
+\end{jobentry}
 
 %----------------------------------------------------------------------------------------
+
+\section{Contributions to Other Projects}
+
+\begin{tabular}{r >{\raggedright\arraybackslash}p{.65\linewidth}}
+
+  %------------------------------------------------
+  %\textsc{Maintainer} & \textbf{mingw-w64-sundials} \\[0.5ex]
+  %& The MSYS2-MinGW package providing the SUNDIALS library. \\[1ex]
+  %\textsc{Contributor} & \textbf{GNU Octave} \\[0.5ex]
+  %& Various bug fixes. \\[1ex]
+
+  \tableentry{Maintainer}{\textbf{mingw-w64-sundials}}{}
+  \tableentry{}{The MSYS2-MinGW package providing the SUNDIALS library.}{spaceafter}
+  & \\[-1.5ex] % idk latex is being weird and annoying.
+
+  %------------------------------------------------
+
+  \tableentry{Contributor}{\textbf{GNU Octave}}{}
+  \tableentry{}{Various bug fixes.}{}
+
+  %------------------------------------------------
+
+\end{tabular}
+%\footnotetext{\url{https://packages.msys2.org/base/mingw-w64-sundials}}
 
 \switchcolumn % Switch to the second (right) column
 
@@ -175,7 +186,7 @@ standard of code quality, but are not fully documented.
 
 %------------------------------------------------
 
-\begin{supertabular}{r l} % Start a table with two columns, the table will ensure everything is aligned
+\begin{tabular}{r l} % Start a table with two columns, the table will ensure everything is aligned
 
   %------------------------------------------------
 
@@ -191,11 +202,13 @@ standard of code quality, but are not fully documented.
 
   %------------------------------------------------
 
-\end{supertabular}
+\end{tabular}
+
+\medskip
 
 \section{Working Environment and Tools}
 
-\begin{supertabular}{r l} % Start a table with two columns, the table will ensure everything is aligned
+\begin{tabular}{r l} % Start a table with two columns, the table will ensure everything is aligned
 
   %------------------------------------------------
 
@@ -209,7 +222,9 @@ standard of code quality, but are not fully documented.
 
   %------------------------------------------------
 
-\end{supertabular}
+\end{tabular}
+
+\medskip
 
 %----------------------------------------------------------------------------------------
 %	EDUCATION
@@ -230,7 +245,7 @@ standard of code quality, but are not fully documented.
 
 %------------------------------------------------
 
-\begin{supertabular}{r l} % Start a table with two columns, the table will ensure everything is aligned
+\begin{tabular}{r l} % Start a table with two columns, the table will ensure everything is aligned
 
   %------------------------------------------------
 
@@ -243,7 +258,9 @@ standard of code quality, but are not fully documented.
 
   %------------------------------------------------
 
-\end{supertabular}
+\end{tabular}
+
+\medskip
 
 \section{Course Projects}
 
@@ -266,29 +283,6 @@ standard of code quality, but are not fully documented.
    input parameters.}
 
 %----------------------------------------------------------------------------------------
-%	SKILLS DESCRIPTION
-%----------------------------------------------------------------------------------------
-
-\section{Contributions to Other Projects}
-
-\begin{supertabular}{r >{\raggedright\arraybackslash}p{.65\linewidth}}
-  %------------------------------------------------
-
-  \tableentry{Maintainer}{\textbf{mingw-w64-sundials}}{}
-  \tableentry{}{The MSYS2-MinGW package providing the SUNDIALS library.}{spaceafter}
-
-  %------------------------------------------------
-
-  \tableentry{Contributer}{\textbf{GNU Octave}}{}
-  \tableentry{}{Various bug fixes.}{spaceafter}
-
-  %------------------------------------------------
-
-\end{supertabular}
-%\footnotetext{\url{https://packages.msys2.org/base/mingw-w64-sundials}}
-
-
-%----------------------------------------------------------------------------------------
 %	AWARDS
 %----------------------------------------------------------------------------------------
 
@@ -302,7 +296,7 @@ standard of code quality, but are not fully documented.
 
 %------------------------------------------------
 
-\begin{supertabular}{r l} % Start a table with two columns, the table will ensure everything is aligned
+\begin{tabular}{r l} % Start a table with two columns, the table will ensure everything is aligned
 
   %------------------------------------------------
 
@@ -314,32 +308,28 @@ standard of code quality, but are not fully documented.
 
   %------------------------------------------------
 
-\end{supertabular}
+\end{tabular}
+
+\medskip
 
 \section{Volunteering}
 
-\jobentry
-  {2016-2019} % Duration
-  {} % Employer
-  {\normalsize Physics Tutor} % Job title
-  {Tutored students in first and second year physics courses.}
+\begin{jobentry}{2016-2019}{}{\normalsize Physics Tutor}
+  Tutored students in first and second year physics courses.
+\end{jobentry}
 
-\jobentry
-  {2016-2019} % Duration
-  {} % Employer
-  {\normalsize Website Administrator} % Job title
-  {Created and maintained a website for the Organization of Physics Undergraduates at University of Manitoba.}
+\begin{jobentry}{2016-2019}{}{\normalsize Website Administrator}
+  Created and maintained a website for the Organization of Physics Undergraduates at University of Manitoba.
+\end{jobentry}
 
-\jobentry
-  {2017} % Duration
-  {} % Employer
-  {\normalsize Science Rendezvous Volunteer} % Job title
-  {Hosted a physics demonstration booth at a science outreach event.}
-
+\begin{jobentry}{2017}{}{\normalsize Science Rendezvous Volunteer}
+  Hosted a physics demonstration booth at a science outreach event.
+\end{jobentry}
+%
 %----------------------------------------------------------------------------------------
-
+%
 \end{paracol} % End two-column mode
-
+%
 %----------------------------------------------------------------------------------------
-
+%
 \end{document}
