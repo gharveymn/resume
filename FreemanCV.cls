@@ -33,6 +33,7 @@
 %----------------------------------------------------------------------------------------
 
 \usepackage{etoolbox} % Required for conditional logic and changing commands
+\usepackage{scrextend}
 
 \setlength{\parindent}{0pt} % Paragraph indentation
 
@@ -155,12 +156,27 @@
 %	CUSTOM COMMANDS
 %----------------------------------------------------------------------------------------
 
-% Command for adding a new job entry (work experience)
-\newenvironment{jobentry}[3]{
-  \expandafter\ifstrequal\expandafter{#2}{}{}{\noindent{\raggedright\large{#2}}\hfill{\raggedleft\textsc{#1}\par}} % Duration and conditional full time/part time text
-  \expandafter\ifstrequal\expandafter{#3}{}{}{\noindent{\raggedright\large\textbf{#3}}\expandafter\ifstrequal\expandafter{#2}{}{\hfill{\raggedleft\textsc{#1}}}{}\\[3pt]} % Job title
+\newif\if@inemployer
+\@inemployerfalse
+
+% Command for adding a new employer entry (work experience)
+\newenvironment{employer}[2]{
+  \@inemployertrue % Cancelled by the end of the environment.
+  \expandafter\ifstrequal\expandafter{#1}{}{}{\noindent{\raggedright\large\textbf{#1}}\ifstrequal\expandafter{#2}{}{}{\hfill{\raggedleft\textbf{\textsc{#2}}}}\par}
+  \vspace{0.5ex}
 }{
-  \vspace{3ex}
+  \vspace{2ex}
+}
+
+% Command for adding a new job entry (work experience)
+\newenvironment{jobentry}[1]{
+  #1\\[-2ex]
+}{
+  \vspace{2ex}
+}
+
+\newcommand{\jobtitle}[2]{
+  \expandafter\ifstrequal\expandafter{#1}{}{}{\noindent{\raggedright\large{\if@inemployer{#1}\else\textbf{#1}\fi}}\expandafter\ifstrequal\expandafter{#2}{}{}{\hfill{\raggedleft\textsc{#2}}}\\}
 }
 
 % Command for entering a new qualification (education)
